@@ -401,7 +401,7 @@ CheckOutPay.obtainDirection = React.createClass({
                   </select>
                   <div className="arrowDown"></div>
                   <label className="input__label input__label--fumi" htmlFor="state">
-                    <img className="icon--fumi" src="assets/images/state.svg" />
+                    <img className="icon--fumi" src="assets/images/state.png" />
                     <span className="input__label-content input__label-content--fumi">
                       Estado
                     </span>
@@ -420,7 +420,7 @@ CheckOutPay.obtainDirection = React.createClass({
                   </select>
                   <div className="arrowDown"></div>
                   <label className="input__label input__label--fumi" htmlFor="colony">
-                    <img className="icon--fumi" src="assets/images/colony.svg" />
+                    <img className="icon--fumi" src="assets/images/colony.png" />
                     <span className="input__label-content input__label-content--fumi">
                       Colonia
                     </span>
