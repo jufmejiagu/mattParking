@@ -1,0 +1,195 @@
+@import "variables.styl";
+@import "shoppingCart";
+@import "bookCard";
+@import "suggestedBookCard";
+@import "CheckOutPay";
+
+body
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: $backgroundColor;
+  margin:0;
+  padding:0;
+
+
+
+.main
+  height: 100%;
+  width: 100%;
+  background-color: $backgroundColor;
+
+.header
+  background-color: white;
+  color: $fontColor;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+
+  .navContainer
+    width: 33.5px;;
+    display: flex;
+    justify-content: flex-end;
+
+    .closeElement
+      width: 12px;
+      height: 12px;
+      -webkit-transform: rotate(-225deg);
+      transform: rotate(-225deg);
+      border-bottom: solid 2px #ddd;
+      border-right: solid 2px #ddd;
+      align-self: center;
+      cursor: pointer;
+
+
+    img
+      height: 20px;
+      margin-left: 20px;
+      align-self: center;
+      cursor: pointer;
+
+  .titleContainer
+    width: 100%
+    display: flex;
+    justify-content: center;
+    margin-left: -8%;
+    h6
+      align-self: center;
+      font-size: 13px;
+
+.bottomBar
+  background-color: white;
+  color: $fontColor;
+  width: 100%;
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  bottom: 0px;
+  position: fixed;
+  z-index: 9999;
+
+.width-10-item
+  width: 10% !important;
+
+.width-44-item
+  width: 44% !important;
+
+.left-item
+  left: calc(100% - 20%) !important;
+
+.icon-item-inside-li
+  position: absolute;
+  left: 3px;
+  top: 4px;
+
+ol {
+
+  &.progress-track {
+    display: table;
+    list-style-type: none;
+    margin: 0;
+    padding: 0em 0em;
+    table-layout: fixed;
+    width: 100%;
+
+    li {
+      display: table-cell;
+      line-height: 3em;
+      position: relative;
+      text-align: center;
+
+      .icon-wrap {
+        border-radius: 50%;
+        top: -10px;
+        color: #fff;
+        display: block;
+        height: 14.6px;
+        left: calc(100% - 13px);
+        z-index: 9;
+        position: absolute;
+        width: 14.6px;
+        font-size: 9.3px;
+      }
+
+      .icon-check-mark, .icon-down-arrow {
+        height: 25px;
+        width: 15px;
+        display: inline-block;
+        fill: currentColor;
+      }
+
+      .progress-text {
+         position: relative;
+         top: 10px;
+      }
+
+      &.progress-done {
+        border-top: 5px solid $beekBlue;
+        border-radius: 10px;
+        transition: border-color 1s ease-in-out;
+        -webkit-transition: border-color 1s ease-in-out;
+        -moz-transition: border-color 1s ease-in-out;
+
+        .icon-down-arrow {
+          display: none;
+        }
+
+          &.progress-current {
+
+            .icon-wrap {
+              background-color: $beekBlue;
+
+              .icon-check-mark {
+               display: none;
+              }
+
+              .icon-down-arrow {
+                display: block;
+              }
+            }
+          }
+
+        .icon-wrap {
+          background-color: $beekBlue;
+        }
+      }
+
+      &.progress-todo {
+          border-top: 5px solid $greyState;
+          color: black;
+          border-radius: 0px 10px 10px 0px;
+
+        .icon-wrap {
+          background-color: $greyState;
+          top: -10px;
+          color: #fff;
+          display: block;
+          height: 14.6px;
+          left: calc(100% - 13px);
+          z-index: 9;
+          position: absolute;
+          width: 14.6px;
+          font-size: 9.3px;
+
+          .icon-check-mark, .icon-down-arrow {
+              display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.input__label-content--fumi
+  color: $fontInputColor;
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
