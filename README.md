@@ -16,7 +16,7 @@ Proyecto
 
   Subir a 'producción': gulp release
 
-  Testear: gulp test
+  Testear: npm test
     Mostrará en consola los resultados de los tests
 
 
