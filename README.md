@@ -33,12 +33,12 @@ Tecnologías
 > - React JS -> Framework pedido para realizar el test project, V0.14.2 (Y todos sus plugins en esta misma versión) ¿Por qué esta versión? Porque soy creyente de que el número de la versión no hace un buen producto, había usado esta versión en proyectos anteriores y cumple con lo necesario.
 > - Jest JS -> Se usó el framework de pruebas para testear componentes y stores. (En los componentes solo se testea lo necesario, la consistencia de la data se testea en los stores)
 > - Gulp -> Se usó gulp como automatizador de tareas debido a que el tamaño del test project no ameritaba una instalación de algo más complejo como webpack.
-> Stylus -> Debido a la necesidad de usar precompilador de css y por gusto personal (Sintaxis más amigable que Sass por ejemplo)
-> Flux -> ¿Por qué Flux y no Redux? Redux es genial para aplicaciones grandes y complejas, permitiendo la escalabilidad sin crecer en el número de Stores (Como pasaría en flux). Se decidió usar Flux para el test project debido a que usar Redux para éste no aportaría nada a cambio de una implementación más compleja.
-> Imagenes en Svg  -> Se decide usar imagenes Svg en la medida de lo posible, por la calidad y la escalabilidad del css sin penalizaciones por los tamaños, etc.
-> Lodash -> Al usar datos quemados se tienen listas simples, para manejarlas nos aprovechamos de la optimización que tiene Lodash para el manejo de esta estructura de datos. Con datos reales se recomienda tener estructuras de datos para una mejora considerable del rendimiento de la aplicación.
-> Immutable JS -> Manejo de estados que ameritan ser inmutables.
-> Eslint -> Eslint para mantener un estandar en el código (Se usaron las reglas de airBnB)
+> - Stylus -> Debido a la necesidad de usar precompilador de css y por gusto personal (Sintaxis más amigable que Sass por ejemplo)
+> - Flux -> ¿Por qué Flux y no Redux? Redux es genial para aplicaciones grandes y complejas, permitiendo la escalabilidad sin crecer en el número de Stores (Como pasaría en flux). Se decidió usar Flux para el test project debido a que usar Redux para éste no aportaría nada a cambio de una implementación más compleja.
+> - Imagenes en Svg  -> Se decide usar imagenes Svg en la medida de lo posible, por la calidad y la escalabilidad del css sin penalizaciones por los tamaños, etc. (En los íconos se decide usar PNGS para mantener la consistencia de los íconos en los browsers mobiles.
+> - Lodash -> Al usar datos quemados se tienen listas simples, para manejarlas nos aprovechamos de la optimización que tiene Lodash para el manejo de esta estructura de datos. Con datos reales se recomienda tener estructuras de datos para una mejora considerable del rendimiento de la aplicación.
+> - Immutable JS -> Manejo de estados que ameritan ser inmutables.
+> - Eslint -> Eslint para mantener un estandar en el código (Se usaron las reglas de airBnB)
 
 
 
