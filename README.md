@@ -8,11 +8,14 @@ Creado por: Juan Felipe Mejía Guerra
 
 Proyecto
 -------------
+  -Usar la version LTS de node
+
   Instalar: npm install
     (Tiene preinstalador de gulp en modo global)
 
   Ejecutar: gulp dev
     (ejecutará un servidor en el puerto 8000 con la aplicación localhost:8000)
+    (Se debe tener corriendo el backend)
 
   Subir a 'producción': gulp release
 
