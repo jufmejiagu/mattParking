@@ -1,46 +1,46 @@
 import Dispatcher from '../dispatcher/dispatcher.js';
-import history from '../router/history';
-import LoginAPI from '../utils/login-api-utils';
-import Constants from '../constants/login-constants';
-
+import Constants from '../constants/LoginConstants';
+import Api from '../api';
 
 const LoginActions = {
 
-  transitionToMap(){
-    history.pushState(null, `/map`);
-  },
-
-  transitionToLogin(){
-    history.pushState(null, `/login`);
-  },
-
-  logOut(){
-    Dispatcher.handleViewAction({
-      type: Constants.LOGOUT,
-      callback: this.transitionToLogin
-    })
-  },
-
-  deleteSnackbarMessage(){
-    Dispatcher.handleViewAction({
-      type: Constants.DELETE_SNACKBAR_MESSAGE
-    })
-  },
-
-  logIn(userData) {
-    LoginAPI.login(userData, (err, res) => {
-      if (err) {
-        Dispatcher.handleViewAction({
-        type: Constants.SET_SNACKBAR_MESSAGE
-        });
+  onLogin(userData, userType, errorCallback) {
+    Api.onCallAjaxPromise('/api/auth/login', 'POST', userData).then((response) => {
+      if (!response.ok) {
+        errorCallback(response.statusText);
         return;
-      } else {
-        Dispatcher.handleViewAction({
-          type: Constants.SET_TOKEN
-        });
       }
+      response.json().then((jsonResponse) => {
+        Dispatcher.handleViewAction({
+          data: { userData: jsonResponse, userType },
+          type: Constants.ON_LOGIN,
+        });
+      });
+    }).catch(() => {
+      errorCallback('Intentalo de nuevo.');
     });
-  }
+  },
+
+  onCreateUsuario(nuevoUsuario, errorCallback) {
+    Api.onCallAjaxPromise('/api/users', 'POST', nuevoUsuario).then((response) => {
+      if (!response.ok) {
+        errorCallback(response.statusText);
+        return;
+      }
+      response.json().then((jsonResponse) => {
+        if (jsonResponse) {
+          errorCallback();
+        }
+      });
+    });
+  },
+
+  onLogout() {
+    const type = Constants.ON_LOGOUT;
+    Dispatcher.handleViewAction({ type });
+  },
+
+
 };
 
 export default LoginActions;

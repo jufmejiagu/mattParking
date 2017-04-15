@@ -1,0 +1,56 @@
+.vehicleCard
+  display: flex;
+  border: 1px solid $mattelsaGray;
+  margin-top: 10px;
+  align-self: center;
+  padding: 5px;
+  font-size: 20px;
+  font-family: 'BebasNeueRegular';
+  cursor: pointer;
+  flex-wrap: wrap;
+
+  &:hover
+    border: 1px solid $mattelsaRed;
+    background-color: $mattelsaBlack;
+    color: white !important;
+
+    .cedulaContainer
+      strong
+        color: white !important;
+
+
+  .placaContainer
+    margin-left: 2%;
+    width: 100px;
+
+
+  .cedulaContainer
+    display: flex;
+    strong
+      font-family: 'BebasNeueRegular' !important;
+      color: $mattelsaBlack !important;
+      font-size: 20px !important;
+      font-family: 'BebasNeueRegular' !important;
+      border: none !important;
+
+    span
+      margin-left: 5px;
+      color: $mattelsaGrayText;
+
+
+  .typeContainer
+    display: flex;
+
+    .itemType
+      display: flex;
+
+      .itemName
+        margin-left: 10px;
+
+      .itemValue
+        margin-left: 5px;
+        color: $mattelsaGrayText;
+
+@media screen and (min-width: 550px)
+  .vehicleCard
+    flex-wrap: nowrap;

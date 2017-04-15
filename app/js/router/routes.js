@@ -1,14 +1,18 @@
-import React from 'react';
+import React from 'react'; //eslint-disable-line
 import APP from '../components/generical/app.js';
-import { Route, IndexRoute } from 'react-router';
-import ShoppingCart from '../components/shoppingCart';
-import CheckOutPay from '../components/checkOutPay';
+import { Route, IndexRoute } from 'react-router'; //eslint-disable-line
+
+
+import LoginContainer from '../components/login/container';
+import AdministrationContainer from '../components/administration/AdministrationContainer';
+import EmployeeContainer from '../components/employee/employeeContainer';
 
 const Routes = (
     <Route name="APP" path="/" component={APP}>
-      <IndexRoute component={ShoppingCart}/>
-      <Route path="/payment" component={CheckOutPay}/>
-      <Route path="*" component={ShoppingCart}/>
+      <IndexRoute component={LoginContainer}/>
+      <Route path="/administration" component={AdministrationContainer} />
+      <Route path="/employee" component={EmployeeContainer} />
+      <Route path="*" component={LoginContainer}/>
     </Route>
 );
 

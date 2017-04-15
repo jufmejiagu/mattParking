@@ -1,4 +1,3 @@
-
 var Dispatcher = require('flux').Dispatcher;
 const assign = require('object-assign');
 let n = 0;
@@ -11,7 +10,14 @@ var Dispatcher = assign(new Dispatcher(), {
       source: 'VIEW_ACTION',
       action,
     };
-    this.dispatch(payload);
+    if (this.isDispatching()) {
+      window.setTimeout(() => {
+        this.dispatch(payload);
+      })
+    } else {
+      this.dispatch(payload);
+    }
+
   },
 
   handleServerAction(action) {
@@ -20,7 +26,13 @@ var Dispatcher = assign(new Dispatcher(), {
       source: 'SERVER_ACTION',
       action,
     };
-    this.dispatch(payload);
+    if (this.isDispatching()) {
+      window.setTimeout(() => {
+        this.dispatch(payload);
+      })
+    } else {
+      this.dispatch(payload);
+    }
   },
 });
 

@@ -1,0 +1,76 @@
+.administrationContainer
+  display: flex;
+  flex-direction: column;
+
+  .content
+    margin-top: 43px;
+    display: flex;
+    flex-direction: column;
+
+    .informes
+      background-color: $mattelsaBlack;
+      color: white;
+      border: none;
+      font: 13px 'HelvNeueRoman', sans-serif;
+      text-transform: uppercase;
+      width: 200px;
+      align-self: center;
+      margin-bottom: 15px;
+
+    .greatings
+      font-family: 'BebasNeueRegular';
+
+      h3
+        margin-left: 2%;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        color: $mattelsaBlack;
+        font-size: 30px;
+
+    .searchBar
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2
+        font-family: 'BebasNeueRegular';
+        margin: 0;
+
+      strong
+        border-bottom: 1px solid #bbb;
+        color: $mattelsaGrayText;
+        font: 15px 'HelvNeueRoman', sans-serif;
+        text-align: center;
+
+
+      form
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .field
+          color: $mattelsaGrayText;
+          font: 12px/14px 'HelvNeueRoman', sans-serif;
+          margin-right: 10px;
+          margin-bottom: 3px;
+
+          label
+            color: $mattelsaGrayText;
+
+          input
+            border: 1px solid $mattelsaGray;
+            margin-left: 5px;
+
+        button
+          background-color: $mattelsaBlack;
+          color: white;
+          border: none;
+          font: 13px 'HelvNeueRoman', sans-serif;
+          text-transform: uppercase;
+
+      .error
+        font-family: 'BebasNeueRegular';
+        color: $mattelsaRed;
+        margin-top: 10px;
+        font-size: 20px;

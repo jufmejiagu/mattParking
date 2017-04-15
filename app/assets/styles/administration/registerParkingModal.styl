@@ -1,0 +1,67 @@
+.registerParkingModal
+  position: fixed;
+  height: calc(100% - 43px);
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.90);
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font: 15px 'HelvNeueRoman', sans-serif;
+
+  h3
+    font-family: 'BebasNeueRegular';
+    font-size: 30px;
+
+  .vehicleInformation
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: $mattelsaBlack;
+    padding: 20px;
+
+    img
+      width: 200px;
+      margin-bottom: 5px;
+
+    .item
+      display: flex;
+      font-family: 'BebasNeueRegular';
+      font-size: 20px;
+
+      .itemName
+        margin-left: 10px;
+
+      .itemValue
+        margin-left: 5px;
+        color: $mattelsaGrayText;
+
+  .instructions
+    font: 18px 'HelvNeueRoman', sans-serif;
+    margin-top: 15px;
+
+  .inputContainer
+    margin-top: 15px;
+
+
+    input
+      margin-left: 10px;
+
+  .error
+    font-family: 'BebasNeueRegular';
+    color: $mattelsaRed;
+    margin-top: 10px;
+    font-size: 20px;
+
+  .buttonsContainer
+    margin-top: 10px;
+
+    button
+      color: $mattelsaBlack;
+      background-color: white;
+      margin: 0px 5px 0px 5px;
+      border: none;
+      font: 13px 'HelvNeueRoman', sans-serif;
+      text-transform: uppercase;

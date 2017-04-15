@@ -1,0 +1,56 @@
+const vehiculo = {
+  cedulaDueño: 'Int', // 'Ref' a empleado,
+  placa: 'string', //Para bicicletas puede ser un ID único.
+  fotografia: 'string', // => Necesito tener la foto xD
+  tipo: {
+    nombre: 'carro',
+    modelo: '',
+    numPuertas: '',
+  },
+  tipo: {
+    nombre: 'moto',
+    cilindraje: 'string',
+    tiempos: 'string',
+  },
+  tipo: {
+    nombre: 'bicicleta',
+  },
+};
+
+const empleado = {
+  nombres: 'String', // 'Primer Nombre, Segundo Nombre',
+  apellidos: 'String', // 'Primer apellido, segundo apellido',
+  cedula: 'Int',
+  contraseña: 'string'
+};
+
+const registroParqueadero = {
+  placa: '',
+  numeroCelda: 'string',
+  fechaEntrada: 'Date',
+  horaEntrada: '',
+};
+
+
+End Points
+
+POST login :param {Cedula, Contraseña} //devuelve un { Login: Ok } o un { Error: 'Error en los datos' }
+
+GET vehiculos :param cedulaDueño //Devuelve todos los vehiculos de un empleado
+GET vehiculo  :param placa //Devuelve toda la información del vehiculo
+GET registroParqueadero :param cedulaDueño Month
+//Devuelve todos los registros de parqueadero de un empleado con fechaEntrada
+// en el mes 'month'
+
+POST vehiculo :param vehiculo // Crea un nuevo vehiculo
+POST registroParqueadero :param registroParqueadero // Crea un nuevo registroParqueadero
+
+Codigos de error:
+ * Cuando falla la inserción porque el objeto está mal:
+    Cod 400: "Información erronea",
+
+ * Cuando está intentando ingresar otro vehiclo con la misma placa:
+    Cod 409: "El vehiculo que está intentando ingresar ya existe"
+
+  * Timeout
+    Cod 408: "Estamos experimentando problemas, intente más tarde"
