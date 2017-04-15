@@ -25,7 +25,9 @@ const EmployeeContainer = React.createClass({
   },
 
   componentDidMount() {
-    ParkingActions.onSearchVehicles({ cedula: LoginStore.getUser().cedula });
+    if (LoginStore.getUser()) {
+      ParkingActions.onSearchVehicles({ cedula: LoginStore.getUser().cedula });
+    }
   },
 
 
@@ -35,7 +37,9 @@ const EmployeeContainer = React.createClass({
 
   transitionToUseRoute() {
     if (!LoginStore.getUser()) {
-      this.history.pushState(null, '/');
+      if (this.history) {
+        this.history.pushState(null, '/');
+      }
     }
   },
 
@@ -44,7 +48,8 @@ const EmployeeContainer = React.createClass({
   },
 
   render() {
-    const greatings = `Hola, ${LoginStore.getUser().nombres}`;
+    const nombre = LoginStore.getUser() ? LoginStore.getUser().nombres : '';
+    const greatings = `Hola, ${nombre}`;
     return (
       <div className="employeeContainer">
         <TopBar />

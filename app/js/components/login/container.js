@@ -45,7 +45,7 @@ const LoginContainer = React.createClass({
 
   render() {
     return (
-      <div className="loginContainer">
+      <div className="loginContainer" ref="loginContainer">
         <img
           className="logo"
           src="https://www.mattelsa.net/skin/frontend/mattelsa/default/images/logo-mattelsa.png"

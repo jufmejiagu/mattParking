@@ -39,7 +39,9 @@ const AdministrationContainer = React.createClass({
 
   transitionToUseRoute() {
     if (!LoginStore.getUser()) {
-      this.history.pushState(null, '/');
+      if (this.history) {
+        this.history.pushState(null, '/');
+      }
     }
   },
 
@@ -107,7 +109,7 @@ const AdministrationContainer = React.createClass({
     }
     const greatings = `Hola, ${LoginStore.getUser().nombres}`;
     return (
-      <div className="administrationContainer">
+      <div className="administrationContainer" ref="administrationContainer">
         <TopBar />
         <div className="content">
           <div className="greatings">

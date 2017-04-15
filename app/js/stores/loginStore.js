@@ -9,11 +9,14 @@ class LoginStore extends BaseStore {
   */
   constructor() {
     super();
-    if (window.localStorage.getItem('parkingMattelsaUser')) {
-      const { userData, userType } = JSON.parse(window.localStorage.getItem('parkingMattelsaUser'));
-      this.user = userData;
-      this.userType = userType;
-      return;
+    if (window.localStorage) {
+      if (window.localStorage.getItem('parkingMattelsaUser')) {
+        const { userData, userType } = JSON
+          .parse(window.localStorage.getItem('parkingMattelsaUser'));
+        this.user = userData;
+        this.userType = userType;
+        return;
+      }
     }
     this.userType = null;
     this.user = null;
